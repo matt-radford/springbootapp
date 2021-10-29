@@ -160,7 +160,7 @@ public class UserIT {
     public void deleteStation_ReturnsNoContent_Success() throws Exception {
         // given
         RequestBuilder request = MockMvcRequestBuilders
-                .delete("/stations/1");
+                .delete("/clubs/1");
 
         // when
         ResultActions resultActions = mockMvc.perform(request);
@@ -193,7 +193,7 @@ public class UserIT {
         resultActions
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.name").value("Renamed Station"))
+                .andExpect(jsonPath("$.name").value("Renamed Club"))
                 .andExpect(jsonPath("$.dateFounded").value("1901-11-17"))
                 .andExpect(jsonPath("$.titlesCount").value(1));
     }
